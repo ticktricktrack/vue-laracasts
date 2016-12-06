@@ -4,17 +4,20 @@
     <meta charset="utf-8">
     <title>Vue LaraCasts</title>
     <script src="https://unpkg.com/vue@2.1.4/dist/vue.js" charset="utf-8"></script>
+    <style media="screen">
+      .red-text { color: red }
+    </style>
   </head>
   <body>
     <div id="root">
-      <button :title="title">Hover over me</button>
+      <h1 :class="className">Red Headline</h1>
     </div>
 
     <script type="text/javascript">
       new Vue({
         el: "#root",
         data: {
-          title: "Dynamic button title!",
+          className: "red-text",
         },
       });
     </script>
