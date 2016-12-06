@@ -5,21 +5,14 @@
     <title>Vue LaraCasts</title>
     <script src="https://unpkg.com/vue@2.1.4/dist/vue.js" charset="utf-8"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
-    <style media="screen">
-      .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s
-      }
-      .fade-enter, .fade-leave-active {
-        opacity: 0
-      }
-    </style>
   </head>
 
   <body style="padding-top: 30px;">
     <div id="root" class="container">
-      <message title="Hello World" body="Lorem ispum dolor..."></message>
-      <message title="Another Message" body="in a bottle"></message>
-      <message title="This is fun" body="Vue is awesom"></message>
+      <button @click="showModal = true" class="button is-primary">Show Modal</button>
+      <modal v-if="showModal" @close="showModal = false">
+        <p>Custom text in reusable component</p>
+      </modal>
     </div>
 
     <script src="main.vue" charset="utf-8"></script>
