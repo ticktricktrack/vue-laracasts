@@ -5,19 +5,24 @@
     <title>Vue LaraCasts</title>
     <script src="https://unpkg.com/vue@2.1.4/dist/vue.js" charset="utf-8"></script>
     <style media="screen">
-      .red-text { color: red }
+      .is-loading { color: red }
     </style>
   </head>
   <body>
     <div id="root">
-      <h1 :class="className">Red Headline</h1>
+      <button :class="{ 'is-loading': isLoading }" @click="toggleClass">Toggle Me</button>
     </div>
 
     <script type="text/javascript">
       new Vue({
         el: "#root",
         data: {
-          className: "red-text",
+          isLoading: false,
+        },
+        methods: {
+          toggleClass() {
+            this.isLoading = true;
+          },
         },
       });
     </script>
