@@ -7,18 +7,18 @@
   </head>
   <body>
     <div id="root">
-      <button :disabled="disabled" @click="disable">Toggle Me</button>
+      <h1>{{ reversedMessage }}</h1>
     </div>
 
     <script type="text/javascript">
       new Vue({
         el: "#root",
         data: {
-          disabled: false,
+          message: "Foooo",
         },
-        methods: {
-          disable() {
-            this.disabled = true;
+        computed: {
+          reversedMessage() {
+            return this.message.split("").reverse().join("");
           },
         },
       });
