@@ -20,7 +20,7 @@ Vue.component("message", {
           {{ body }}
         </div>
       </article>
-    </transition
+    </transition>
   `
 })
 
